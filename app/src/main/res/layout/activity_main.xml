@@ -11,73 +11,98 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/titleHome"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:text="HOME"
+            android:textColor="@color/title_color"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="88dp"
-            android:orientation="vertical">
+            android:layout_height="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_weight="0.8"
+            android:orientation="vertical"
+            android:weightSum="1">
 
-            <TextView
-                android:id="@+id/titleHome"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="HOME"
-                android:textColor="@color/title_color"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="473dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Need to find appropriate list item"
-                android:textAlignment="center" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:orientation="vertical">
+                android:layout_height="0dp"
+                android:layout_weight="0.1" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
+                android:layout_height="0dp"
+                android:layout_weight="0.8"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/buttonCamera"
-                    android:layout_width="match_parent"
+                <Space
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
-                    android:background="@android:color/white"
-                    android:outlineProvider="bounds"
-                    android:text="Camera" />
+                    android:layout_weight="0.05" />
 
-                <Button
-                    android:id="@+id/buttonRecipe"
-                    android:layout_width="match_parent"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list_items"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:scrollbars="vertical">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <Space
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="25dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimary"
-                    android:textColor="@android:color/white"
-                    android:text="Recipe" />
+                    android:layout_weight="0.05" />
+
             </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/home_bottom_buttons"
+            style="@style/Widget.AppCompat.ButtonBar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="0dp"
+            android:layout_weight="0.1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonCamera"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="0.4"
+                android:background="@android:color/white"
+                android:outlineProvider="bounds"
+                android:text="Camera" />
+
+            <Button
+                android:id="@+id/buttonRecipe"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="25dp"
+                android:layout_weight="0.4"
+                android:background="@color/colorPrimary"
+                android:text="Recipe"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
     </LinearLayout>
