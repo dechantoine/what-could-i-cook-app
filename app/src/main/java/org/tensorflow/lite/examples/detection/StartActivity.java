@@ -25,13 +25,9 @@ public class StartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                // connecting this main activity with the second activity and pass on a string
-
-                Intent intent = new Intent(StartActivity.this, TutorialActivity.class);
-
-                //intent.putExtra("activityOne", "I am from the First Activity Hoorraaaayyy!!");
-
-                startActivity(intent);
+                Intent a = new Intent(StartActivity.this, TutorialActivity.class);
+                startActivity(a);
+                finish();
 
             }
         });

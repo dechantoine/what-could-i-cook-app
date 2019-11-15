@@ -92,7 +92,7 @@ public abstract class CameraActivity extends AppCompatActivity
   private SwitchCompat apiSwitchCompat;
   private TextView threadsTextView;
 
-  private Button myButton;
+  private Button buttonOk;
 
   @Override
   protected void onCreate(final Bundle savedInstanceState) {
@@ -110,20 +110,16 @@ public abstract class CameraActivity extends AppCompatActivity
     } else {
       requestPermission();
     }
-    myButton = (Button) findViewById(R.id.button);
 
-    myButton.setOnClickListener(new View.OnClickListener() {
+    // Add OK button function
+    buttonOk = (Button) findViewById(R.id.buttonOK);
+    buttonOk.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
 
-        // connecting this main activity with the second activity and pass on a string
-
-        Intent intent = new Intent(CameraActivity.this, TutorialActivity.class);
-
-        intent.putExtra("activityOne", "I am from the First Activity Hoorraaaayyy!!");
-
-        startActivity(intent);
-
+        Intent e = new Intent(CameraActivity.this, MainActivity.class);
+        startActivity(e);
+        finish();
       }
     });
     threadsTextView = findViewById(R.id.threads);

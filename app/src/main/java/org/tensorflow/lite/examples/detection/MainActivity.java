@@ -8,21 +8,25 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.tensorflow.lite.examples.detection.tracking.MultiBoxTracker;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btnRecipe;
     private Button btnCamera;
     ListView simpleList;
+    String label = MultiBoxTracker.getData();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        String a = "apple";
-        String b = "banana";
-        ((ItemsContainer) this.getApplication()).addItem(a);
-        ((ItemsContainer) this.getApplication()).addItem(b);
+        //String a = "apple";
+        //String b = "banana";
+        if (label != null) {
+            String c = label;
+            ((ItemsContainer) this.getApplication()).addItem(c);
+        }
+        //((ItemsContainer) this.getApplication()).addItem(a);
+        //((ItemsContainer) this.getApplication()).addItem(b);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -35,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent_3 = new Intent(getApplicationContext(), RecipeActivity.class);
-                startActivity(intent_3);
+                Intent c = new Intent(getApplicationContext(), RecipeActivity.class);
+                startActivity(c);
 
             }
         });
@@ -45,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent_3 = new Intent(getApplicationContext(), DetectorActivity.class);
-                startActivity(intent_3);
+                Intent d = new Intent(getApplicationContext(), DetectorActivity.class);
+                startActivity(d);
 
             }
         });
