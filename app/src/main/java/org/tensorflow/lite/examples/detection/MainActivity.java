@@ -16,25 +16,18 @@ public class MainActivity extends AppCompatActivity {
     private Button btnRecipe;
     private Button btnCamera;
     ListView simpleList;
-    List<String> itemsList = new ArrayList<String>();
-    List<Integer> picture = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         String a = "apple";
         String b = "banana";
-        itemsList.add(b);
-        itemsList.add(a);
-        for(int k=0; k<itemsList.size(); k++){
-            String name = itemsList.get(k);
-            int resID = getResources().getIdentifier(name, "drawable", getPackageName());
-            picture.add(resID);
-        }
+        ((ItemsContainer) this.getApplication()).addItem(a);
+        ((ItemsContainer) this.getApplication()).addItem(b);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         simpleList = (ListView) findViewById(R.id.listViewItems);
-        CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), itemsList, picture);
+        CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), ((ItemsContainer) this.getApplication()).getItemsList(), ((ItemsContainer) this.getApplication()).getPictures());
         simpleList.setAdapter(customAdapter);
 
         btnRecipe = (Button) findViewById(R.id.buttonRecipe);
