@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnCamera;
     ListView simpleList;
     String itemsList[] = {"Banana", "Apple"};
-    int pictures[] = {R.drawable.banana, R.drawable.apple};
+    Integer pictures[] = {R.drawable.banana, R.drawable.apple};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
