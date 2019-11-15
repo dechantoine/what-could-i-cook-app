@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_light"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -47,14 +48,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.05" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/list_items"
+                <ListView
+                    android:id="@+id/listViewItems"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.9"
-                    android:scrollbars="vertical">
-
-                </androidx.recyclerview.widget.RecyclerView>
+                    android:layout_weight="0.9" />
 
                 <Space
                     android:layout_width="0dp"
