@@ -23,10 +23,10 @@ public class CustomAdapter extends BaseAdapter {
     LayoutInflater inflter;
     List<String> itemsList = new ArrayList<String>();
 
-    public CustomAdapter(Context applicationContext, String[] itemList, Integer[] pictures) {
+    public CustomAdapter(Context applicationContext, List<String> itemList, List<Integer> pictures) {
         this.context = applicationContext;
-        this.itemsList = new ArrayList<String>(Arrays.asList(itemList));
-        this.pictures = asList(pictures);
+        this.itemsList = itemList;
+        this.pictures = pictures;
         inflter = (LayoutInflater.from(applicationContext));
     }
 

@@ -8,21 +8,33 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button btnRecipe;
     private Button btnCamera;
     ListView simpleList;
-    String itemsList[] = {"Banana", "Apple"};
-    Integer pictures[] = {R.drawable.banana, R.drawable.apple};
+    List<String> itemsList = new ArrayList<String>();
+    List<Integer> picture = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        String a = "apple";
+        String b = "banana";
+        itemsList.add(b);
+        itemsList.add(a);
+        for(int k=0; k<itemsList.size(); k++){
+            String name = itemsList.get(k);
+            int resID = getResources().getIdentifier(name, "drawable", getPackageName());
+            picture.add(resID);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         simpleList = (ListView) findViewById(R.id.listViewItems);
-        CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), itemsList, pictures);
+        CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), itemsList, picture);
         simpleList.setAdapter(customAdapter);
 
         btnRecipe = (Button) findViewById(R.id.buttonRecipe);
