@@ -57,6 +57,7 @@ public class CustomAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 itemsList.remove(i);
+                pictures.remove(i);
                 notifyDataSetChanged();
             }
         });
