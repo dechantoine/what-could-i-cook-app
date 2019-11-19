@@ -52,7 +52,8 @@
                     android:id="@+id/listViewItems"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.9" />
+                    android:layout_weight="0.9"
+                    android:clickable="false" />
 
                 <Space
                     android:layout_width="0dp"

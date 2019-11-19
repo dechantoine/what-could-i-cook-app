@@ -1,7 +1,6 @@
 package org.tensorflow.lite.examples.detection;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +45,7 @@ public class CustomAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         view = inflter.inflate(R.layout.activity_listview, null);
         TextView item = (TextView) view.findViewById(R.id.itemView);
-        ImageView icon = (ImageView) view.findViewById(R.id.icon);
+        ImageView icon = (ImageView) view.findViewById(R.id.recipe_pic);
         Button delete = (Button) view.findViewById((R.id.button_discard));
         item.setText(itemsList.get(i));
         icon.setImageResource(pictures.get(i));
