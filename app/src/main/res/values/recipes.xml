@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="title">
+        <item>apple pie</item>
+        <item>banana pie</item>
+        <item>smoothie apple banana</item>
+    </array>
+    <array name="items">
+        <item>apple</item>
+        <item>banana</item>
+        <item>apple banana</item>
+    </array>
+    <array name="picture">
+        <item>drawable/apple_pie.jpg</item>
+        <item>drawable/banana_pie.jpg</item>
+        <item>drawable/smoothie_apple_banana.jpg</item>
+    </array>
+    <array name="time">
+        <item>35</item>
+        <item>30</item>
+        <item>8</item>
+    </array>
+    <array name="star">
+        <item>4</item>
+        <item>5</item>
+        <item>3</item>
+    </array>
+</resources>
