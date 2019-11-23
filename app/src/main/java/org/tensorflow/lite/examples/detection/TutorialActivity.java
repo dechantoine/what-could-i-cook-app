@@ -48,8 +48,6 @@ public class TutorialActivity extends AppCompatActivity {
 
                 Intent b = new Intent(TutorialActivity.this, MainActivity.class);
                 startActivity(b);
-
-
             }
         });
     }
