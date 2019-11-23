@@ -11,14 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingTop="35dp">
-
-        <ImageView
-            android:id="@+id/imageTutorial"
-            android:layout_width="249dp"
-            android:layout_height="277dp"
-            android:layout_gravity="center_horizontal|top|center_vertical"
-            app:srcCompat="@drawable/laptop" />
+        android:paddingTop="70dp">
 
         <TextView
             android:id="@+id/startTitle"
@@ -40,6 +33,34 @@
             android:paddingTop="20dp"
             android:text="Learn how to use application!"
             android:textColor="@color/title_color" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="6dp">
+
+            <autoimageslider.SliderView
+                android:id="@+id/imageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:sliderAnimationDuration="1000"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderAutoCycleEnabled="true"
+                app:sliderCircularHandlerEnabled="true"
+                app:sliderIndicatorAnimationDuration="1000"
+                app:sliderIndicatorGravity="center_horizontal|bottom"
+                app:sliderIndicatorMargin="10dp"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorPadding="3dp"
+                app:sliderIndicatorRadius="2dp"
+                app:sliderIndicatorSelectedColor="#2699FB"
+                app:sliderIndicatorUnselectedColor="#FFF"
+                app:sliderScrollTimeInSec="2"
+                app:sliderStartAutoCycle="false" />
+
+        </androidx.cardview.widget.CardView>
+
     </LinearLayout>
 
     <LinearLayout
