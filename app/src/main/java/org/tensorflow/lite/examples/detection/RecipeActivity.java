@@ -43,6 +43,7 @@ public class RecipeActivity extends AppCompatActivity {
     public void getListRecipes() {
         //this.recipesList.add("apple pie");
         //this.recipesList.add("smoothie apple banana");
+        //this.recipesList.add("banana pie");
         Resources res = getResources();
         TypedArray titles = res.obtainTypedArray(R.array.title);
         TypedArray items = res.obtainTypedArray(R.array.items);

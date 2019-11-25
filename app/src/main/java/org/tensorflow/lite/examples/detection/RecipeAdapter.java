@@ -52,12 +52,10 @@ public class RecipeAdapter extends BaseAdapter {
         TextView time = (TextView) view.findViewById(R.id.recipe_time);
         ImageView icon = (ImageView) view.findViewById(R.id.recipe_pic);
         ImageView stars = (ImageView) view.findViewById(R.id.recipe_stars);
-        ImageView glasshour = (ImageView) view.findViewById(R.id.glasshour);
         item.setText(this.recipesList.get(i));
         icon.setImageResource(pictures.get(i));
         stars.setImageResource(starsList.get(i));
-        glasshour.setImageResource(R.drawable.hourglass);
-        time.setText(this.timesList.get(i) + " MIN  ");
+        time.setText(this.timesList.get(i) + " MIN ");
         return view;
     }
 }
