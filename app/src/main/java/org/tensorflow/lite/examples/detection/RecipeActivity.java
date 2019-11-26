@@ -1,3 +1,8 @@
+/*********************************************************
+ 5. Recipe activity - objective is to displaying the recipes based on Main activity list items
+
+ *********************************************************/
+
 package org.tensorflow.lite.examples.detection;
 
 import android.content.res.Resources;

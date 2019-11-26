@@ -1,5 +1,14 @@
 package org.tensorflow.lite.examples.detection;
 
+/*********************************************************
+ 2. Tutorial activity - objective is to explains how to use application
+ Features:
+ - Image slider used from: https://github.com/smarteist/Android-Image-Slider
+ - button
+ - setting intent for the third activity - Main activity (home)
+
+ *********************************************************/
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -22,14 +31,13 @@ public class TutorialActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
 
+        // IMPLEMENTATION OF SLIDER
         sliderView = findViewById(R.id.imageSlider);
-
         final SliderAdapterExample adapter = new SliderAdapterExample(this);
         adapter.setCount(4);
-
         sliderView.setSliderAdapter(adapter);
-
-        sliderView.setIndicatorAnimation(IndicatorAnimations.WORM); //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
+        //set indicator animation by using SliderLayout
+        sliderView.setIndicatorAnimation(IndicatorAnimations.WORM);
         sliderView.setSliderTransformAnimation(SliderAnimations.CUBEINROTATIONTRANSFORMATION);
         sliderView.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_RIGHT);
 
@@ -40,6 +48,7 @@ public class TutorialActivity extends AppCompatActivity {
             }
         });
 
+        // Setting up button to display Main activity using intent
         btnNext = (Button) findViewById(R.id.buttonNext);
         btnNext.setOnClickListener(new View.OnClickListener(){
 

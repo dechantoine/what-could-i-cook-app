@@ -1,3 +1,13 @@
+/*********************************************************
+ 3. Main activity - main interface
+ Features:
+ - Tensorflow object recognition engine used from:
+ https://github.com/tensorflow/examples/tree/master/lite/examples/bert_qa/android
+ - Product list
+ - Weight converter
+
+ *********************************************************/
+
 package org.tensorflow.lite.examples.detection;
 
 import android.content.Intent;
@@ -25,8 +35,10 @@ public class MainActivity extends AppCompatActivity {
     private EditText enterAmount;
     private Button ozButton;
     private Button gButton;
+
     // create a decimal format object to round our values to 1 decimal places
     DecimalFormat round = new DecimalFormat("0.0");
+    //Weight variable
     private static final double
             GRAMS_PER_OUNCE = 28.349523125;
 
@@ -36,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        // Hides keyboard on activity start
+        // Hides keyboard otherwise it pops out automaticly when actvity starts
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
         //List function
@@ -55,17 +67,16 @@ public class MainActivity extends AppCompatActivity {
         CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), ((ItemsContainer) this.getApplication()).getItemsList(), ((ItemsContainer) this.getApplication()).getPictures()); //here we create and feed the list of items
         simpleList.setAdapter(customAdapter);
 
+        //Weight converter
         enterAmount = (EditText) findViewById(R.id.editText);
         ozButton = (Button) findViewById(R.id.ozButton);
         gButton = (Button) findViewById(R.id.gButton);
-        //textViewTemp = (TextView) findViewById(R.id.textViewTemp);
 
         //Set up buttons (event listeners)
         // Button ounces
         ozButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //call convertToCelsius()
                 String editTextVal = enterAmount.getText().toString();
                 if (editTextVal.isEmpty()) {
                     // display a short message to the screen if things go wrong
@@ -73,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     // we are good
                     double intEditText = Double.parseDouble(extractNumber(editTextVal));
-                    //double intEditText = Double.parseDouble(extractNumber(editTextVal));
                     // put the returned value into a variable so we can use it
                     double convertedVal = gramsToOunces(intEditText);
                     //use the String.valueOf() method to convert our double value
@@ -87,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
         gButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //call convertToCelsius()
                 String editTextVal = enterAmount.getText().toString();
                 if (editTextVal.isEmpty()) {
                     // display a short message to the screen if things go wrong
@@ -104,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //Button for calling Recipes activity based on list items. Uses Intent
         btnRecipe = (Button) findViewById(R.id.buttonRecipe);
         btnRecipe.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        //Button for calling camera activity by using Intent
         btnCamera = (Button) findViewById(R.id.buttonCamera);
         btnCamera.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,7 +145,8 @@ public class MainActivity extends AppCompatActivity {
         return ounces * GRAMS_PER_OUNCE;
     }
 
-    // If user enter number + letter, extract only numbers
+    // This part is for Weight converter
+    // If user enter number + letter, extract only numbers using regular expression
     public static String extractNumber(String input){
 
         //replace all characters except digits, +-.

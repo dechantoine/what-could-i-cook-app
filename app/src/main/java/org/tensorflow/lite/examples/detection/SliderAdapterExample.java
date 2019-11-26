@@ -1,3 +1,7 @@
+/*********************************************************
+ This Class provides functionality for the tutorial activity image slider
+
+ *********************************************************/
 package org.tensorflow.lite.examples.detection;
 
 import android.content.Context;

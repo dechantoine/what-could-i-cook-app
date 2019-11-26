@@ -13,7 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/*********************************************************
+ 4. Camera activity - use phone camera to detect objects
+ Features:
+ - Tensorflow image recognition set-up
+ - Camera
+ - Setting global variable for label extraction to the list
 
+ *********************************************************/
 package org.tensorflow.lite.examples.detection;
 
 import android.Manifest;

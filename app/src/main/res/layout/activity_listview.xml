@@ -8,7 +8,7 @@
         android:id="@+id/recipe_pic"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:src="@drawable/icon" />
+        android:src="@drawable/pot" />
 
     <Space
         android:layout_width="10dp"

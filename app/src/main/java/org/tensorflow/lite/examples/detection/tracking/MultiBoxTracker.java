@@ -213,6 +213,8 @@ public class MultiBoxTracker {
     int color;
     String title;
   }
+
+  //Important class for returning Value
   public static String getData() {
     return txt;
   }
