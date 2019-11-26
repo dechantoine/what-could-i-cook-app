@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- this file is used to store all informations about recipes. It is static and non-editable while running the app.
+Informations are stored in array; each array is a "column" and each feature from the same recipes is written on the same line of each array
+For example, recipe 1 : name=apple pie, items=apple, picture=apple_pie.jpg, time=35, star=4-->
 <resources>
     <array name="title">
         <item>apple pie</item>

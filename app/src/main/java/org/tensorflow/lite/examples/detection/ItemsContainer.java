@@ -14,20 +14,22 @@ public class ItemsContainer extends Application {
 
     public List<String> getItemsList() {
         return itemsList;
-    }
+    } //classic getter
 
     public void addItem(String item) {
+        //classic setter
         this.itemsList.add(item);
         this.updatePictures();
     }
 
     public void removeItem(int i) {
+        //classic setter
         this.itemsList.remove(i);
         this.updatePictures();
     }
 
     public void updatePictures(){
-        this.pictures.clear();
+        this.pictures.clear(); //every time the function is call, it started from scratch
         for(int k=0; k<this.itemsList.size(); k++){
             String name = this.itemsList.get(k);
             int resID = getResources().getIdentifier(name, "drawable", getPackageName()); //all pictures have been given the same name than the associated food item
@@ -37,5 +39,5 @@ public class ItemsContainer extends Application {
 
     public List<Integer> getPictures(){
         return this.pictures;
-    }
+    } //classic getter
 }

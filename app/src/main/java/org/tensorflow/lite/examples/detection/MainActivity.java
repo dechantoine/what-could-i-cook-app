@@ -42,17 +42,17 @@ public class MainActivity extends AppCompatActivity {
         //List function
         //String a = "apple"; //for testing purposes
         //String b = "banana"; //for testing purposes
+        //((ItemsContainer) this.getApplication()).addItem(a); //for testing purposes
+        //((ItemsContainer) this.getApplication()).addItem(b); //for testing purposes
         if (label != null) {
             String c = label;
             ((ItemsContainer) this.getApplication()).addItem(c); //here we feed the items container with the captured item
         }
-        //((ItemsContainer) this.getApplication()).addItem(a); //for testing purposes
-        //((ItemsContainer) this.getApplication()).addItem(b); //for testing purposes
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        simpleList = (ListView) findViewById(R.id.listViewItems);
-        CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), ((ItemsContainer) this.getApplication()).getItemsList(), ((ItemsContainer) this.getApplication()).getPictures());
+        simpleList = (ListView) findViewById(R.id.listViewItems); //this is the list of items
+        CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), ((ItemsContainer) this.getApplication()).getItemsList(), ((ItemsContainer) this.getApplication()).getPictures()); //here we create and feed the list of items
         simpleList.setAdapter(customAdapter);
 
         enterAmount = (EditText) findViewById(R.id.editText);

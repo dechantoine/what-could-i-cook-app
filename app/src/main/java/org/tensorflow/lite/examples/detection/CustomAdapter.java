@@ -54,6 +54,7 @@ public class CustomAdapter extends BaseAdapter {
         delete.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                //here are the actions of the delete Button
                 itemsList.remove(i);
                 pictures.remove(i);
                 notifyDataSetChanged();
