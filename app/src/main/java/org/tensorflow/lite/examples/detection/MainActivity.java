@@ -40,14 +40,14 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
         //List function
-        //String a = "apple";
-        //String b = "banana";
+        //String a = "apple"; //for testing purposes
+        //String b = "banana"; //for testing purposes
         if (label != null) {
             String c = label;
-            ((ItemsContainer) this.getApplication()).addItem(c);
+            ((ItemsContainer) this.getApplication()).addItem(c); //here we feed the items container with the captured item
         }
-        //((ItemsContainer) this.getApplication()).addItem(a);
-        //((ItemsContainer) this.getApplication()).addItem(b);
+        //((ItemsContainer) this.getApplication()).addItem(a); //for testing purposes
+        //((ItemsContainer) this.getApplication()).addItem(b); //for testing purposes
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

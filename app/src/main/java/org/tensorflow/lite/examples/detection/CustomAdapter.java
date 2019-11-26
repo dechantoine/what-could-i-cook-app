@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+//This is class is designed to add more features to ListView than the original BaseAdapter
 
 public class CustomAdapter extends BaseAdapter {
     Context context;
@@ -20,6 +21,7 @@ public class CustomAdapter extends BaseAdapter {
     List<String> itemsList = new ArrayList<String>();
 
     public CustomAdapter(Context applicationContext, List<String> itemList, List<Integer> pictures) {
+        //all values are inherited from MainActivity
         this.context = applicationContext;
         this.itemsList = itemList;
         this.pictures = pictures;
