@@ -1,41 +1,47 @@
-# TensorFlow Lite Object Detection Android Demo
-### Overview
-This is a camera app that continuously detects the objects (bounding boxes and classes) in the frames seen by your device's back camera, using a quantized [MobileNet SSD](https://github.com/tensorflow/models/tree/master/research/object_detection) model trained on the [COCO dataset](http://cocodataset.org/). These instructions walk you through building and running the demo on an Android device.
+# Mobile Application "What could I cook?"
+## 1. Introduction
+### Part A - image classification
+As of now it is safe to say we will going to use TensorFlow Lite Image classification.
+[**Here**](https://github.com/tensorflow/examples/tree/master/lite/examples/image_classification/android) is good starting point explaining how to set up android example. This example set you classify images live from camera feed. This is not axacly what we are looking for but can make for a good base to build upon.
+Download project: 
+```
+git clone https://github.com/tensorflow/examples
+```
 
-The model files are downloaded via Gradle scripts when you build and run. You don't need to do any steps to download TFLite models into the project explicitly.
+Open the TensorFlow source code in Android Studio. To do this, open Android
+Studio and select `Open an existing project`, setting the folder to
+`examples/lite/examples/image_classification/android`
 
-Application can run either on device or emulator.
+* For details of the model used, visit [Image classification](https://www.tensorflow.org/lite/models/image_classification/overview).
 
-<!-- TODO(b/124116863): Add app screenshot. -->
+* Develop your own Android app for image recognition with tensorflow in 20 minutes [link](https://medium.com/@sa_m_u/develop-your-own-android-image-recognition-app-with-tensorflow-in-20-minutes)
 
-## Build the demo using Android Studio
+### Part B - recipe library/API</br>
+[Here](https://github.com/ddsky/spoonacular-api-clients/tree/7bb2b9668369b3fd64300a8f078636da7dad9d6c/android) is a source of how to implement **spoonacular** API Client.
+You can read more about the Spoonacular API [here.](https://github.com/dechantoine/androidproject/blob/master/spoonacular-api-slides.pdf)
+<br>
+API is not open source but they have "free plan". It is limited to 150 calls per day which in our case is sufficient enough for testing and presentation, in my opinion.
+<br>
+***Alternative***
+<br>
+After todays (15/10/2019) lab session meeting we have decided to go on and use simple database (like, MySQL) in order to show the concept. Configuring spoonacular API proved to be difficult task for beginners in Android development.
 
-### Prerequisites
-
-* If you don't have already, install **[Android Studio](https://developer.android.com/studio/index.html)**, following the instructions on the website.
-
-* You need an Android device and Android development environment with minimum API 21.
-* Android Studio 3.2 or later.
-
-### Building
-* Open Android Studio, and from the Welcome screen, select Open an existing Android Studio project.
-
-* From the Open File or Project window that appears, navigate to and select the tensorflow-lite/examples/object_detection/android directory from wherever you cloned the TensorFlow Lite sample GitHub repo. Click OK.
-
-* If it asks you to do a Gradle Sync, click OK.
-
-* You may also need to install various platforms and tools, if you get errors like "Failed to find target with hash string 'android-21'" and similar.
-Click the Run button (the green arrow) or select Run > Run 'android' from the top menu. You may need to rebuild the project using Build > Rebuild Project.
-
-* If it asks you to use Instant Run, click Proceed Without Instant Run.
-
-* Also, you need to have an Android device plugged in with developer options enabled at this point. See **[here](https://developer.android.com/studio/run/device)** for more details on setting up developer devices.
+## 2. Resources
+***Android Studio***
+<br>
+* How to use software Version Control (Github) - [Download .rar](https://drive.google.com/file/d/10Kzzxg9hnqzR5almRMRjjshyjvdeysXA/view?usp=sharing)
 
 
-### Model used
-Downloading, extraction and placing it in assets folder has been managed automatically by download.gradle.
+## 3. Wireframe - first iteration
+<br>
+<img src="https://github.com/dechantoine/androidproject/blob/master/wireframe%20giff.gif" alt="drawing" width="400"/>
 
-If you explicitly want to download the model, you can download from **[here](http://storage.googleapis.com/download.tensorflow.org/models/tflite/coco_ssd_mobilenet_v1_1.0_quant_2018_06_29.zip)**. Extract the zip to get the .tflite and label file.
+## 4. Must have functionality
 
-### Additional Note
-_Please do not delete the assets folder content_. If you explicitly deleted the files, then please choose *Build*->*Rebuild* from menu to re-download the deleted model files into assets folder.
+* Image
+* Button and Text. Insert simpleText (inputType). Include change of colour, font, and size.
+* Use logic like *switch*
+* Add GPS
+* Adding multiple activities
+* Add video or audio file at the beggining of the app launch
+
