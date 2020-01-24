@@ -34,7 +34,7 @@ After todays (15/10/2019) lab session meeting we have decided to go on and use s
 
 ## 3. Wireframe - first iteration
 <br>
-<img src="https://github.com/dechantoine/androidproject/blob/master/wireframe%20giff.gif" alt="drawing" width="400"/>
+<img src="https://github.com/dechantoine/what_could_I_cook_app/blob/master/wireframe%20giff.gif" alt="drawing" width="400"/>
 
 ## 4. Must have functionality
 
